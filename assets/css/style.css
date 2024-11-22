@@ -39,26 +39,87 @@ header.primary h1{
 
 }
 
-#content article.post {
-    background-color: antiquewhite;
-    margin: 20px;
+.team-container {
+    background-color: #eaf6f6; /* Light teal background */
+    border: 2px solid #007acc; /* Blue border */
+    border-radius: 10px; /* Rounded corners */
     padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "figure header";
+    margin: 20px auto;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 90%;
 }
 
-#content article figure{
-    grid-area: figure;
+/* Grid Layout for Team Members */
+.post {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible columns */
+    gap: 20px; /* Space between items */
 }
 
+/* Individual Team Member Block */
 figure {
-    text-align: center;
-    border-right: 5px solid black;
-    border-bottom: 5px solid black;
-    border-top: 5px solid black;
-    border-left: 5px solid black;
+    text-align: center; /* Center content inside each block */
+    background-color: #f9f9f9; /* Light background color for visual appeal */
+    border: 1px solid #ddd; /* Border for separation */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
+/* Image Styling */
+figure img {
+    width: 100%; /* Make images responsive */
+    max-width: 150px; /* Limit maximum image size */
+    border-radius: 5px; /* Rounded image corners */
+    margin-bottom: 10px;
+}
+
+/* Caption Styling */
+figcaption {
+    font-family: Arial, sans-serif; /* Use a clean font */
+    font-size: 14px;
+    color: #333; /* Dark text color */
+    line-height: 1.5; /* Improve readability */
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444; /* Slightly dark text color */
+}
+
+/* Larger First Image */
+#firstPic img {
+    width: 120%; /* 120% of the default size */
+    max-width: 200px; /* Set a larger max width */
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover;
+}
+
+
+
+#WebPic img{
+    width: 120%;
+    max-width: 500px;
+    max-height: 200px;
+}
+
+.webCache .question { /* Target paragraphs with the 'question' class */
+    display: flex; /* Align the content horizontally */
+    align-items: center; /* Vertically center the content */
+    margin-bottom: 20px; /* Space between sections */
+}
+
+.webCache figure {
+    margin-left: 20px; /* Add space between the text and image */
+    max-width: 150px; /* Adjust image width */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* Ensure the images are responsive */
+#WebPic img, #WebPic2 img {
+    width: 100%; /* Make sure images take up the full width of the container */
+    border-radius: 5px; /* Optional: add rounded corners */
+    max-width: 200px; /* Limit the size of the images */
+}
