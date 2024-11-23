@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <title> ENCS3320-Webserver </title>
+        <meta charset="utf-8">
+        <meta name="description" content="برمجة المقابس">
+        <meta name="author" content="هديل النسوان | سديل أحمد | دانا حفيظة">
+        <link href="assets/css/style.css" rel="stylesheet"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+<body> 
+   <main>    
+    <header role="banner" class="primary container">
+        <div class="hgroup">
+          <h1> مرحباً بكم في خادم الويب - ENCS3320 </h1>  
+        
+       <nav role="navigation"> 
+        <ul> 
+
+            <li><a href="support/index.html"> مواد دعم </a></li>
+            <li><a href="https://gaia.cs.umass.edu/kurose_ross/index.php"> موقع الكتاب المدرسي </a></li>
+            <li><a href="https://ritaj.birzeit.edu/"> موقع ريتاج </a></li>
+
+        </ul>
+       </nav> 
+        </div>
+    </header>
+
+     <section id="blog" class="container">
+        <h2> مقدمة لأعضاء الفريق: </h2>
+        <article class="post"> 
+            <figure id="firstPic">
+                <img src="assets/img/hadeelsPic.png" alt="صورة هديل النسوان"> 
+                <figcaption>
+                    <p>هديل بلال النسوان - 1230209 </p><br>
+                </figcaption>
+            </figure>
+            <div class="post-content">
+                    <p>أنا طالبة عمرها 19 عاماً أدرس تخصص الأمن السيبراني، لدي اهتمام كبير بحماية المعلومات الرقمية والبحث دائماً عن طرق لتعزيز أمان البيئة الرقمية.</p>
+                    <p>أحب مواجهة التحديات واستكشاف التقنيات الجديدة باستمرار لضمان أمان المعلومات عبر الإنترنت.</p>
+            </div>  
+        </article>
+
+        <article class="post">
+            <figure id="secondPic">
+                <img src="assets/img/sadeelsPic.png" alt="صورة سديل أحمد غيثان">
+
+                <figcaption>
+                    <p>سديل أحمد غيثان - 1231231</p> <br> 
+                </figcaption>
+            </figure>
+            <div class="post-content">
+                    <p>أنا طالبة أمن سيبراني متحمسة للتكنولوجيا والبرمجة والتطوير.</p>
+                    <p>أسعى دائماً لاستخدام مهاراتي لإحداث تأثير إيجابي من خلال التطوع والمساهمة الفعالة في مجتمعي.</p>
+            </div>
+        </article>
+
+        <article class="post">
+            <figure id="thirdPic">
+                <img src="assets/img/dana.png" alt="صورة دانا رافع حفيظة">
+
+                <figcaption>
+                    <p>دانا رافع حفيظة - 1211234 </p><br>
+                </figcaption>
+            </figure>
+            <div class="post-content">
+                    <p>أنا طالبة هندسة حاسوب عمري 20 عاماً. أحد المشاريع التي عملت عليها كان إنشاء تطبيق لتأجير العقارات في دورة قواعد البيانات التي حضرتها العام الماضي.</p>
+                    <p>أنا مهتمة جداً بتوسيع معرفتي وأحب تعلم كل ما يمكن تعلمه.</p>
+            </div>
+        </article>
+     </section>
+
+     <section id="webcacheNav" class="webCache"> 
+         <h3> التخزين المؤقت للويب:  </h3>
+        <article id="what-is-web-caching"> 
+            <figure id="WebPic1">
+            <p> <em> ما هو التخزين المؤقت للويب؟ </em> </p>
+            <img src="assets/img/webCache1.png"  alt="تخزين مؤقت للويب" class="headerImage">
+            </figure> 
+        
+        <p>
+                التخزين المؤقت للويب، المعروف أيضاً باسم الخادم الوكيل، هو نظام في الشبكة يساعد في التعامل مع طلبات الويب. يعمل عن طريق تخزين نسخ من صفحات الويب والملفات التي تم الاطلاع عليها مؤخراً.
+            </p>
+        <p> 
+            يعمل التخزين المؤقت ككل من خادم وعميل:
+            </p>
+        <nav class="webCache">
+            <ul>
+            <li>	كخادم: يرسل محتوى الويب المخزن إلى المستخدمين عند طلبه.</li>
+            <li>كعميل: يطلب المحتوى من الخادم الأصلي عندما لا يكون لديه نسخة مخزنة.</li>
+         </ul>   
+        </nav>
+       </article>
+
+       <p> <em> كيف يعمل؟ </em> </p>
+       <nav role="navigation"> 
+        <article id="how-does-it-work"> 
+            <figure id="WebPic2"> 
+                <img src="assets/img/webCache2.png" alt="صورة تخزين مؤقت">
+            </figure> 
+        </article>
+        <ol> 
+            <li> يتصل المتصفح بالتخزين المؤقت ويطلب الصفحة أو الملف الذي يحتاجه. </li>
+            <li> يتحقق التخزين المؤقت إذا كان لديه الصفحة أو الملف.
+                * إذا كانت موجودة، فإنه يرسلها مباشرة.
+                * إذا لم تكن موجودة، فإنه يتصل بالموقع الأصلي للحصول عليها.
+                </li>
+            <li> بمجرد حصول التخزين المؤقت على الصفحة، يقوم بحفظ نسخة وإرسالها إلى المتصفح.</li>
+        </ol>
+       </nav>
+
+       <p> <em> أنواع التخزين المؤقت؟ </em></p>
+       <article id="types-of-web-caching">
+       <nav role="navigation">
+        <ul>
+            <li> ذاكرة المتصفح: تخزن صفحات الويب التي تزورها على جهازك لتسريع التحميل عند زيارتها مجدداً.</li>
+            <li> التخزين الوكيل: يعمل كمكتبة مشتركة في الشبكة لتسريع الوصول للمستخدمين.</li>
+            <li> ذاكرة شبكة التوصيل CDN: مخازن موزعة عالمياً لتسريع التحميل بغض النظر عن الموقع الجغرافي.</li>
+        </ul>
+       </nav>
+    </article>
+
+    <article id="applications">
+       <p> <em> تثبيت التخزين المؤقت وتطبيقاته </em></p>
+
+       <nav role="navigation">
+        <p>
+            يتم عادةً تثبيت التخزين المؤقت من قبل مزود خدمة الإنترنت. على سبيل المثال، قد تنشئ الجامعة تخزين مؤقت لشبكتها لاستخدام الطلاب.
+        </p>
+       </nav>
+    </article>
+
+    <article id="benefits">
+       <p> <em> ما هي الفوائد؟ </em> </p>
+       <nav role="navigation"> 
+        <ul> 
+            <li> استجابة أسرع: يجعل مواقع الويب أسرع للمستخدمين.</li>
+            <li> تقليل حركة الإنترنت: يقلل من البيانات المتنقلة بين المؤسسات والإنترنت.</li>
+        </ul>
+        </nav>
+    </article>
+     </section>
+
+     <footer id="colophon" role="contentinfo">
+        <h6>&copy; 2024 هديل النسوان | سديل أحمد | دانا حفيظة </h6>
+      </footer>
+  </main>
+</body>
+</html>
