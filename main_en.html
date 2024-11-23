@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> ENCS3320-Webserver </title>
+        <meta charset="utf-8">
+        <meta name="description" content="Socket Programming">
+        <meta name="author" content="Hadeel Alniswan | Sadeel Ahmad | Dana Hafithah">
+        <link href="assets/css/style.css" rel="stylesheet"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    </head>
+
+<body> 
+   <main>    
+    <header role="banner" class="primary container">
+        <div class="hgroup">
+          <h1> Welcome to ENCS3320 - Computer Networks Webserver </h1>  
+        
+       <nav role="navigation"> 
+        <ul> 
+
+            <li><a href="support/index.html"> Support Material </a></li>
+            <li><a href="https://gaia.cs.umass.edu/kurose_ross/index.php"> Textbook Website </a></li>
+            <li><a href="https://ritaj.birzeit.edu/"> Ritaj Website </a></li>
+
+        </ul>
+       </nav> 
+        </div>
+    </header>
+
+     <section id="blog" class="container">
+        <h2> Introduction to team members: </h2>
+        <article class="post"> 
+            <figure id="firstPic">
+                <img src="assets/img/hadeelsPic.png" alt="Placeholder for Hadeel Alniswan Pic"> 
+                <figcaption>
+                    <p>Hadeel Bilal Alniswan - 1230209 </p><br>
+                </figcaption>
+            </figure>
+            <div class="post-content">
+                    <p>I'm a 19 year old student majoring in cyber security, I'm deeply interested in cybersecurity, always looking for
+                    ways to protect digital information. </p>
+                    <p>I enjoy taking on challenging problems and constantly exploring new technologies
+                    to ensure a secure online environment.</p>
+                
+            </div>  
+        </article>
+
+
+        <article class="post">
+            <figure id="secondPic">
+                <img src="assets/img/sadeelsPic.png" alt="Placeholder for Sadeel Ahmad Ghithan">
+
+                <figcaption>
+                    <p>Sadeel Ahmad Ghithan - 1231231</p> <br> 
+                </figcaption>
+            </figure>
+            <div class="post-content">
+                    <p>Im a Cybersecurity student with a deep passion for technology, programming, and development.</p>
+                    <p>Im dedicated to using my skills to make a positive impact through volunteering and actively contributing to my community.</p>
+
+               
+            </div>
+        </article>
+
+        <article class="post">
+            <figure id="thirdPic">
+                <img src="assets/img/dana.png" alt="Placeholder for Dana Rafe Hafitha">
+
+                <figcaption>
+                    <p>Dana Rafe Hafitha - 1211234 </p><br>
+                </figcaption>
+            </figure>
+            <div class="post-content">
+                    <p>I'm a 20 year old computer engineering student one of my projects i worked in was creating an
+                     application to rent real estates in the Database course which i took last year. </p>
+                     <p>I'm really into boosting my knowledge and love to learn everything that i could learn.</p>
+
+                
+            </div>
+  
+        </article>
+     </section>
+        
+
+
+        <section id="webcacheNav" class="webCache"> 
+         <h3> Web Cache:  </h3>
+        <article id="what-is-web-caching"> 
+            <figure id="WebPic1">
+            <p> <em> What is Web Caching? </em> </p>
+            <img src="assets/img/webCache1.png"  alt="Placeholder for web cache" class="headerImage">
+            </figure> 
+        
+        <p>
+                A Web cache, also known as a proxy server, is a system in a network that helps handle web 
+            requests. It works by storing copies of recently viewed web pages and files on its own 
+            storage. If your browser is set up to use a Web cache, all the requests you make for web
+            content will go to the cache first. The cache checks if it already has the content you 
+            need. If it does, it sends it to your browser right away, saving time and reducing the 
+            need to connect to the original web server.
+        </p>
+        <p> 
+            The cache acts as both a server and a client: </p><br>
+        <nav class="webCache">
+            <ul>
+            <li>	As a server, it sends stored web content to users when they request it.</li>
+            <li>As a client, it requests content from the original server when it doesnt already have it stored.</li>
+         </ul>   
+        </nav>
+       </article>
+        <p> <em> How does it work? </em> </p>
+
+       <nav role="navigation"> 
+        <article id="how-does-it-work"> 
+            <figure id="WebPic2"> 
+                <img src="assets/img/webCache2.png" alt="Placeholder" >
+            </figure> 
+        </article>
+        <ol> 
+            <li> The browser connects to the Web cache and asks for the web page or file it needs. </li>
+            <li> The Web cache checks if it already has the page or file stored.
+                * If it does, it sends it back to the browser.
+                * If the Web cache doesnt have the page, it connects to the original website and asks for it.
+                </li>
+            <li>  Once the Web cache gets the page from the website, it saves a copy and sends it to the browser.</li>
+
+
+        </ol>
+
+       </nav>
+
+       <p> <em> Types of web caching? </em></p>
+       <article id="types-of-web-caching">
+       <nav role="navigation">
+        <ul>
+            <li> Browser Cache <br>
+                   Think of this as your personal storage locker in your web browser.
+                It saves copies of the web pages you visit directly on your device,
+                making it super fast to reload them the next time you visit. No need to 
+                re-download everything again!</li>
+
+            <li>Proxy Cache <br>
+                   Imagine a shared library for a group of people. A Proxy Cache stores web 
+                content in a central place within a network, serving multiple users. It helps
+                save bandwidth and speeds up access for everyone in the group. </li>
+
+            <li> CDN Cache <br>
+                   This is like having mini-libraries spread across different cities worldwide.
+                 A Content Delivery Network (CDN) Cache stores data in multiple locations globally, 
+                 so users can access the nearest copy, ensuring faster loading times no matter where
+                 they are.</li>
+        </ul>
+
+       
+       </nav>
+    </article>
+
+    <article id="applications">
+       <p> <em> Web Cache Installation and Its Applications </em></p>
+
+       <nav role="navigation">
+
+        <p>
+                A Web cache is usually bought and set up by an Internet Service Provider (ISP). For example,
+             a university might set up a cache on its campus network and adjust all the campus browsers
+              to use it. Similarly, a big ISP, like Comcast, might install one or more caches in their
+               network and set the browsers they provide to use those caches automatically.
+        </p>
+
+
+       </nav>
+    </article>
+
+
+
+    <article id="benefits">
+       <p> <em> What do we benefit from it? </em> </p>
+
+       <nav role="navigation"> 
+        <ul> 
+
+    <li>	Faster Response Time: </li>
+	<li>	Web caches make websites load faster for users.</li>
+	<li> 	Useful when the connection to the original website is slower than the connection to the cache. </li>
+	<li> 	If the cache has the requested content, it delivers it quickly to the user.</li>
+	<li>	Less Internet Traffic:</li>
+	<li>  	Reduces the amount of data traveling between an institution (e.g., company, university) and the Internet.</li>
+	<li> 	Helps institutions avoid frequent Internet connection upgrades, saving costs. </li>
+	<li>	Reduces overall Internet traffic, improving performance for everyone.</li>
+
+        </ul>
+        </nav>
+    </article>
+
+        
+
+     </section>
+
+     <footer id="colophon" role="contentinfo">
+        <h6>&copy; 2024 Hadeel Alniswan | Sadeel Ahmad | Dana Hafithah </h6>
+      </footer>
+
+
+  </main>
+
+</body>
+
+
+</html>
