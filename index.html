@@ -6,67 +6,93 @@
         <meta name="description" content="Socket Programming">
         <meta name="author" content="Hadeel Alniswan | Sadeel Ahmad | Dana Hafithah">
         <link href="assets/css/style.css" rel="stylesheet"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            </head>
+
+    </head>
+
 <body> 
    <main>    
     <header role="banner" class="primary container">
+        <div class="hgroup">
+          <h1> Welcome to ENCS3320 - Computer Networks Webserver </h1>  
+        
+       <nav role="navigation"> 
+        <ul> 
+            <li> <a href="support/index.html"> Support Material </a></li>
+            <li><a href="https://gaia.cs.umass.edu/kurose_ross/index.php"> Textbook Website </a></li>
+            <li><a href="https://ritaj.birzeit.edu/"> Ritaj Website </a></li>
 
-        <div>
-          <h1> Welcome to ENCS3320 - Computer Networks Webserver </h1>            
+
+        </ul>
+       </nav> 
         </div>
-
     </header>
 
-     <section id="content" class="container">
+     <section id="blog" class="container">
         <h2> Introduction to team members: </h2>
-        <div class="team-container">
         <article class="post"> 
             <figure id="firstPic">
-                <img src="assets/img/hadeelsPic.png"> 
+                <img src="assets/img/hadeelsPic.png" alt="Placeholder for Hadeel Alniswan Pic"> 
                 <figcaption>
-                    Hadeel Bilal Alniswan - 1230209 <br>
-                    Im a 19 year old student majoring in cyber security, I'm deeply interested in cybersecurity, always looking for
-                    ways to protect digital information. I enjoy taking on challenging problems and constantly exploring new technologies
-                    to ensure a secure online environment.
+                    <p>Hadeel Bilal Alniswan - 1230209 </p><br>
                 </figcaption>
             </figure>
+            <div class="post-content">
+                    <p>I'm a 19 year old student majoring in cyber security, I'm deeply interested in cybersecurity, always looking for
+                    ways to protect digital information. </p>
+                    <p>I enjoy taking on challenging problems and constantly exploring new technologies
+                    to ensure a secure online environment.</p>
+                
+            </div>  
+        </article>
 
 
-            
+        <article class="post">
             <figure id="secondPic">
-                <img src="assets/img/sadeelsPic.png">
+                <img src="assets/img/sadeelsPic.png" alt="Placeholder for Sadeel Ahmad Ghithan">
 
                 <figcaption>
-                    Sadeel Ahmad Ghithan - 1231231 <br>
-                    Im a Cybersecurity student with a deep passion for technology, programming, and development.
-                    Im dedicated to using my skills to make a positive impact through volunteering and actively contributing to my community.
-
+                    <p>Sadeel Ahmad Ghithan - 1231231</p> <br> 
                 </figcaption>
             </figure>
-            
+            <div class="post-content">
+                    <p>Im a Cybersecurity student with a deep passion for technology, programming, and development.</p>
+                    <p>Im dedicated to using my skills to make a positive impact through volunteering and actively contributing to my community.</p>
 
-            
+               
+            </div>
+        </article>
+
+        <article class="post">
             <figure id="thirdPic">
-                <img src="assets/img/dana.png">
+                <img src="assets/img/dana.png" alt="Placeholder for Dana Rafe Hafitha">
 
                 <figcaption>
-                    Dana Rafe Hafitha - 1211234 <br>
-                    I'm a 20 year old computer engineering student one of my projects i worked in was creating an
-                     application to rent real estates in the Database course which i took last year. I'm really into
-                      boosting my knowledge and love to learn everything that i could learn.
-
+                    <p>Dana Rafe Hafitha - 1211234 </p><br>
                 </figcaption>
             </figure>
+            <div class="post-content">
+                    <p>I'm a 20 year old computer engineering student one of my projects i worked in was creating an
+                     application to rent real estates in the Database course which i took last year. </p>
+                     <p>I'm really into boosting my knowledge and love to learn everything that i could learn.</p>
+
+                
+            </div>
   
         </article>
-        </div>
+     </section>
+        
 
 
-        <div class="webCache"> 
-        <h3> Web Cache:  </h3>
-        <p class="question"> <em> What is Web Caching? </em> </p>
-        <article class="post"> <figure id="WebPic"> <img src="assets/img/webCache1.png"   ></figure> </article>
+        <section id="webcacheNav" class="webCache"> 
+         <h3> Web Cache:  </h3>
+        <article id="what-is-web-caching"> 
+            <figure id="WebPic1">
+            <p> <em> What is Web Caching? </em> </p>
+            <img src="assets/img/webCache1.png"  alt="Placeholder for web cache" class="headerImage">
+            </figure> 
+        
         <p>
                 A Web cache, also known as a proxy server, is a system in a network that helps handle web 
             requests. It works by storing copies of recently viewed web pages and files on its own 
@@ -76,16 +102,22 @@
             need to connect to the original web server.
         </p>
         <p> 
-            The cache acts as both a server and a client: <br>
-            •	As a server, it sends stored web content to users when they request it. <br>
-            •	As a client, it requests content from the original server when it doesnt already have it stored.
-            <br> 
-        </p>
-       
+            The cache acts as both a server and a client: </p><br>
+        <nav class="webCache">
+            <ul>
+            <li>	As a server, it sends stored web content to users when they request it.</li>
+            <li>As a client, it requests content from the original server when it doesnt already have it stored.</li>
+         </ul>   
+        </nav>
+       </article>
         <p> <em> How does it work? </em> </p>
 
        <nav role="navigation"> 
-        <article class="post"> <figure id="WebPic2"> <img src="assets/img/webCache2.png"   ></figure> </article>
+        <article id="how-does-it-work"> 
+            <figure id="WebPic2"> 
+                <img src="assets/img/webCache2.png" alt="Placeholder" >
+            </figure> 
+        </article>
         <ol> 
             <li> The browser connects to the Web cache and asks for the web page or file it needs. </li>
             <li> The Web cache checks if it already has the page or file stored.
@@ -100,6 +132,7 @@
        </nav>
 
        <p> <em> Types of web caching? </em></p>
+       <article id="types-of-web-caching">
        <nav role="navigation">
         <ul>
             <li> Browser Cache <br>
@@ -120,9 +153,11 @@
                  they are.</li>
         </ul>
 
-
+       
        </nav>
+    </article>
 
+    <article id="applications">
        <p> <em> Web Cache Installation and Its Applications </em></p>
 
        <nav role="navigation">
@@ -136,10 +171,11 @@
 
 
        </nav>
+    </article>
 
 
 
-
+    <article id="benefits">
        <p> <em> What do we benefit from it? </em> </p>
 
        <nav role="navigation"> 
@@ -156,24 +192,16 @@
 
         </ul>
         </nav>
+    </article>
 
-        </div>
-
-     </section>
-
-     <section id="links">
-
-       <nav> 
-        <ul> 
-            <li> <a href="support/index.html"> Support Material </a></li>
-            <li><a href="https://gaia.cs.umass.edu/kurose_ross/index.php"> Textbook Website </a></li>
-            <li><a href="https://ritaj.birzeit.edu/"> Ritaj Website </a></li>
-
-
-        </ul>
-       </nav>
+        
 
      </section>
+
+     <footer id="colophon" role="contentinfo">
+        <h6>&copy; 2024 Hadeel Alniswan | Sadeel Ahmad | Dana Hafithah </h6>
+      </footer>
+
 
   </main>
 
