@@ -71,6 +71,14 @@ while True:  # Run the server continuously to accept multiple connections
         except FileNotFoundError:  # If the file is not found, send a 404 error
             response = f"HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\nError: File not found".encode()
 
+    elif path == "/supporting_material_ar.html":  # If the request is for the supporting material page
+        try:
+            with open(os.path.join(BASE_DIR, "supporting_material_ar.html"), 'rb') as f:
+                content = f.read()  # Read the content of the supporting material page
+            response = f"HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n".encode() + content  # Send the content
+        except FileNotFoundError:  # If the file is not found, send a 404 error
+            response = f"HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\nError: File not found".encode()
+
     # Serve static assets from the assets folder (css, img, etc.)
     elif path.startswith("/assets/"):  # If the request is for a file inside the assets folder
         asset_path = os.path.join(BASE_DIR, path.lstrip("/"))  # Remove the leading slash and create the full path to the file
