@@ -6,6 +6,17 @@ HOST = 'localhost'  # The host where the server will run (localhost means your l
 PORT = 5698  # The port number where the server will listen for requests
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Get the base directory of this script to find HTML files
 
+# Define the content types for static files
+CONTENT_TYPES = {
+    '.html': 'text/html',
+    '.css': 'text/css',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
+    '.jpeg': 'image/jpeg',
+    '.gif': 'image/gif',
+    '.mp4': 'video/mp4',
+}
+
 # Start the server
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Create a socket for IPv4 and TCP
 server_socket.bind((HOST, PORT))  # Bind the socket to the specified host and port
@@ -35,7 +46,6 @@ while True:  # Run the server continuously to accept multiple connections
     # Default response: main_en.html
     if path in ["/", "/en", "/index.html", "/main_en.html"]:  # If the request is for the English homepage
         try:
-            # Try to open the main_en.html file and send its content to the client
             with open(os.path.join(BASE_DIR, "main_en.html"), 'rb') as f:
                 content = f.read()  # Read the content of the file
             response = f"HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n".encode() + content  # Prepare the response
@@ -60,22 +70,22 @@ while True:  # Run the server continuously to accept multiple connections
         except FileNotFoundError:  # If the file is not found, send a 404 error
             response = f"HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\nError: File not found".encode()
 
-    # Handle form requests and redirect based on file type (image/video)
-    elif path.startswith("/support_request"):  # If the request is for the supporting file request
-        query = path.split("?")[1] if "?" in path else ""  # Extract the query part from the URL (e.g., ?file=xxx)
-        file_request = query.split("=")[-1]  # Get the requested file from the query string
+    # Serve static assets from the assets folder (css, img, etc.)
+    elif path.startswith("/assets/"):  # If the request is for a file inside the assets folder
+        asset_path = os.path.join(BASE_DIR, path.lstrip("/"))  # Remove the leading slash and create the full path to the file
 
-        # Determine if the requested file is an image or video based on its extension
-        if file_request.lower().endswith((".png", ".jpg", ".jpeg", ".gif", ".bmp")):  # Check for image types
-            redirect_url = f"https://www.google.com/search?q={file_request}&tbm=isch"  # Redirect to Google Images
-            response = f"HTTP/1.1 307 Temporary Redirect\r\nLocation: {redirect_url}\r\n\r\n".encode()
+        if os.path.exists(asset_path):  # If the requested file exists
+            # Determine the content type based on the file extension
+            file_extension = os.path.splitext(asset_path)[1].lower()
+            content_type = CONTENT_TYPES.get(file_extension, 'application/octet-stream')  # Default to binary stream if unknown
 
-        elif file_request.lower().endswith((".mp4", ".avi", ".mkv", ".mov", ".flv")):  # Check for video types
-            redirect_url = f"https://www.youtube.com/results?search_query={file_request}"  # Redirect to YouTube search
-            response = f"HTTP/1.1 307 Temporary Redirect\r\nLocation: {redirect_url}\r\n\r\n".encode()
+            # Open the file and send its content
+            with open(asset_path, 'rb') as f:
+                content = f.read()
 
-        else:  # If the file type is not recognized (neither image nor video)
-            response = f"HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\nError: File type not recognized".encode()
+            response = f"HTTP/1.1 200 OK\r\nContent-Type: {content_type}\r\n\r\n".encode() + content  # Send the response
+        else:
+            response = f"HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\nError: File not found".encode()
 
     # Handle invalid paths (404)
     else:  # If the request is for an invalid or nonexistent path
