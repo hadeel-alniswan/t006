@@ -1,5 +1,6 @@
 import socket  # Import the socket module to create the server and handle connections
 import os  # Import the os module to handle file paths
+import base64
 
 # Define constants for the server
 HOST = 'localhost'  # The host where the server will run (localhost means your local machine)
