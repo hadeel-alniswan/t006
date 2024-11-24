@@ -123,7 +123,7 @@ while True:  # Run the server continuously to accept multiple connections
                 <html>
                 <body>
                     <h1>Requested Image</h1>
-                    <img src="data:{content_type};base64,{encoded_content}" />
+                    <img src="data:{content_type};base64,{encoded_content}" width="400" height="300" />
                     <br><br>
                     <a href="/supporting_material_en.html">Go back to the page</a>
                 </body>
