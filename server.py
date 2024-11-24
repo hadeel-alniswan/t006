@@ -115,7 +115,21 @@ while True:  # Run the server continuously to accept multiple connections
                 # Read and return the file content
                 with open(file_path, 'rb') as f:
                     content = f.read()
-                response= f"HTTP/1.1 200 OK\r\nContent-Type: {content_type}\r\n\r\n".encode() + content
+                encoded_content = base64.b64encode(content).decode('utf-8')
+
+                # Construct the response HTML to display the image on the page
+                html_response = f"""
+                <html>
+                <body>
+                    <h1>Requested Image</h1>
+                    <img src="data:{content_type};base64,{encoded_content}" />
+                    <br><br>
+                    <a href="/supporting_material_en.html">Go back to the page</a>
+                </body>
+                </html>
+                """
+                response = f"HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n".encode() + html_response.encode()
+
             else:
                 # Redirect to Google or YouTube if the file is not found
                 if file_name.endswith(('.jpg', '.jpeg', '.png', '.gif')):
