@@ -96,6 +96,39 @@ while True:  # Run the server continuously to accept multiple connections
         else:
             response = f"HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\nError: File not found".encode()
 
+    if path.startswith("/support_request"):
+        # Extract the file name from the query (e.g., /support_request?file=example.jpg)
+        if "file=" in path:
+            file_name = path.split("file=")[-1]  # Get the file name after 'file='
+            file_path = os.path.join(BASE_DIR, file_name)  # Full path to the file
+            
+            # Check if the file exists
+            if os.path.exists(file_path):
+                # Determine the content type based on the file extension
+                if file_name.endswith(('.jpg', '.jpeg', '.png', '.gif')):
+                    content_type = "image/*"
+                elif file_name.endswith('.mp4'):
+                    content_type = "video/mp4"
+                else:
+                    content_type = "application/octet-stream"
+
+                # Read and return the file content
+                with open(file_path, 'rb') as f:
+                    content = f.read()
+                response= f"HTTP/1.1 200 OK\r\nContent-Type: {content_type}\r\n\r\n".encode() + content
+            else:
+                # Redirect to Google or YouTube if the file is not found
+                if file_name.endswith(('.jpg', '.jpeg', '.png', '.gif')):
+                    redirect_url = f"https://www.google.com/search?q={file_name}&tbm=isch"
+                elif file_name.endswith('.mp4'):
+                    redirect_url = f"https://www.youtube.com/results?search_query={file_name}"
+                else:
+                    redirect_url = f"https://www.google.com/search?q={file_name}"
+
+                # Return a 307 Temporary Redirect response
+                response= f"HTTP/1.1 307 Temporary Redirect\r\nLocation: {redirect_url}\r\n\r\n".encode()
+   
+
     # Handle invalid paths (404)
     else:  # If the request is for an invalid or nonexistent path
         response = f"HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\nError: File not found".encode()
