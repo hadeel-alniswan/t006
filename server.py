@@ -96,7 +96,7 @@ while True:  # Run the server continuously to accept multiple connections
         else:
             response = f"HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\nError: File not found".encode()
 
-    if path.startswith("/support_request"):
+    elif path.startswith("/support_request"):
         # Extract the file name from the query (e.g., /support_request?file=example.jpg)
         if "file=" in path:
             file_name = path.split("file=")[-1]  # Get the file name after 'file='
