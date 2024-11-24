@@ -100,7 +100,7 @@ while True:  # Run the server continuously to accept multiple connections
         # Extract the file name from the query (e.g., /support_request?file=example.jpg)
         if "file=" in path:
             file_name = path.split("file=")[-1]  # Get the file name after 'file='
-            file_path = os.path.join(BASE_DIR, file_name)  # Full path to the file
+            file_path = os.path.join(BASE_DIR,"assets/img", file_name)  # Full path to the file
             
             # Check if the file exists
             if os.path.exists(file_path):
