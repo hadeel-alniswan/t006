@@ -92,15 +92,17 @@ main{
 /* Image Styling */
 figure img {
     width: 100%; /* Make images responsive */
-    max-width: 150px; /* Limit maximum image size */
+    max-width: 250px; /* Limit maximum image size */
     border-radius: 5px; /* Rounded image corners */
     margin-bottom: 10px;
     
-
 }
 
 #firstPic img{
-    height:130px;
+    width: 100%;
+    height:180px;
+    max-width:250px;
+    object-fit: cover;
     
 }
 /* Caption Styling */
