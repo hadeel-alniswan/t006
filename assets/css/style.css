@@ -8,6 +8,7 @@ html{
 
 img{
     max-width: 100%;
+
 }
 
 body{
@@ -30,16 +31,23 @@ main{
 
 }
 
-.container h2, .webCache h3{
+.container h2{
     text-align: center;
     text-decoration: underline; /* Underline text */
-    text-decoration-color:cadetblue; /* Underline color */
+    text-decoration-color:rgb(209, 237, 238); /* Underline color */
     color: white;
     padding:10px;
     
 
 }
-
+.webCache h3{
+    text-align: center;
+    text-decoration: underline; /* Underline text */
+    text-decoration-color:rgb(209, 237, 238); /* Underline color */
+    color: white;
+    padding:10px;
+    font-size: 30px;
+}
 
 
 
@@ -62,7 +70,7 @@ main{
 }
 
 /* Individual Team Member Block */
-figure {
+.container figure {
     text-align: center; /* Center content inside each block */
     border-right: 5px solid  #4B788F;
     border-left:5px solid  #4B788F;
@@ -87,9 +95,14 @@ figure img {
     max-width: 150px; /* Limit maximum image size */
     border-radius: 5px; /* Rounded image corners */
     margin-bottom: 10px;
+    
 
 }
 
+#firstPic img{
+    height:130px;
+    
+}
 /* Caption Styling */
 figcaption {
     font-family: Arial, sans-serif; /* Use a clean font */
@@ -107,13 +120,7 @@ p {
 
 }
 
-/* Larger First Image */
-#firstPic img {
-    width: 120%; /* 120% of the default size */
-    max-width: 200px; /* Set a larger max width */
-    height: 200px; /* Adjust the height as needed */
-    object-fit: cover;
-}
+
 
 
 
@@ -129,11 +136,7 @@ p {
     margin-bottom: 20px; /* Space between sections */
 }
 
-.webCache figure {
-    margin-left: 20px; /* Add space between the text and image */
-    max-width: 150px; /* Adjust image width */
-    flex-shrink: 0; /* Prevent image from shrinking */
-}
+
 
 /* Ensure the images are responsive */
 #WebPic img, #WebPic2 img {
@@ -150,18 +153,24 @@ p {
 }
 
 header.primary {
-    padding:20px;
+    padding:40px 20px;
     display: flex ;
-    background-image: url('../img/network.png');
+    background-image: url('../img/tech.png');
     background-repeat: no-repeat;
     background-size:cover;
     border-bottom:3px solid #B4B8B9;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    align-items:center;
     
 }
 
+
 header.primary h1{
-    color:black;
-    text-shadow: 3px 3px #ffffff;
+    color:white;
+    margin:10px 0;
+    padding-bottom: 20px;
 }
 
 
@@ -171,20 +180,19 @@ header.primary h1 a {
     text-shadow: 3px 3px #000;
 }
 
-header.primary h2 {
-    color: white;
-}
+
 
 header.primary div.hgroup{
     width:70%;
 }
 header.primary nav{
-    width:30%;
+    width:auto;
 }
 header.primary nav ul{
     list-style-type: none;
     margin:0;
     padding:0;
+    
 }
 
 header.primary nav ul li{
@@ -204,11 +212,17 @@ header.primary nav ul li a{
     transition:.5s;
     font-size: .9;
     text-decoration: none;
+    justify-items: right;
 
 }
 header.primary nav ul li a:hover{
     background-color: rgba(0,0,0, .9);
     text-decoration:underline;
+    
+}
+
+#content{
+    line-height: 1.8rem;
     
 }
 
@@ -224,10 +238,72 @@ header.primary nav ul li a:hover{
     text-align: center;
     padding:20px;
     background-color:#D2D4FC;
-    background-image: url("../img/network.png");
+    background-image: url("../img/tech.png");
     background-repeat: no-repeat;
     background-size:cover;
-    color:black;
-    text-shadow: 1px 1px #ffffff;
+    color:white;
 
 }
+
+
+
+
+
+#WebPic1 img{
+    max-width: 50%; 
+    max-height: 300px; 
+    display: block;
+    justify-content: center;
+    justify-items: center;
+    margin-left: 250px;
+    margin-right: 200px;
+
+}
+
+
+
+#what-is-web-caching{
+    border-bottom: 1px solid #0B1A25;
+
+
+}
+
+#webcacheNav figure {
+    justify-items: left;
+    margin-left: 20px;
+}
+
+#webcacheNav p{
+    margin-left: 20px;
+    margin-right: 20px;
+    color:white;
+}
+
+.webCache  nav ul li{
+    color:white;
+    font-size: 20px;
+
+}
+
+.webCache nav ol li{
+    color:white;
+    font-size: 20px;
+}
+
+#WebPic2 img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:200px;
+    height:150px;
+}
+
+#applications {
+    border-bottom: 1px solid #0B1A25;
+}
+
+#types-of-web-caching{
+    border-bottom: 1px solid #0B1A25;
+
+}
+
