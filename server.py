@@ -9,6 +9,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__)) #get the base directory of
 
 
 CONTENT_TYPES = {
+    '.html': 'text/html',
+    '.css': 'text/css',
     '.png': 'image/png',
     '.jpg': 'image/jpeg',
     '.jpeg': 'image/jpeg',
