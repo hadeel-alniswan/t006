@@ -3,7 +3,7 @@ import os  # Import the os module to handle file paths
 import base64
 
 # Define constants for the server
-HOST = '0.0.0.0' 
+HOST = '127.0.0.1' 
 PORT = 5698  # The port number where the server will listen for requests
 BASE_DIR = os.path.dirname(os.path.abspath(__file__)) 
  # Get the base directory of this script to find HTML files
